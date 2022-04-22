@@ -117,7 +117,6 @@ endif;
               ?>
               </select>
             </div>
-            <?php if(in_array($session, ['Admin'])) : ?>
             <div class="form-group">
               <label for="date-today">Set Tanggal</label>
               <input type="date" class="form-control" name="date-today" id="date-today" autocomplete="off" value="<?= $row['date_today'] ?>" max="<?= date('Y-m-d') ?>">
@@ -130,7 +129,6 @@ endif;
               <label for="time-back">Jam Kembali</label>
               <input type="time" class="form-control" name="time-back" id="time-back" autocomplete="off" value="<?= $row['time_back'] ?>">
             </div>
-            <?php endif; ?>
             <div class="form-group">
               <label for="destination">Tujuan</label>
               <textarea class="form-control" name="destination" id="destination" placeholder="Tujuan Perjalanan" style="height: 100px" maxlength="255"><?= $row['destination'] ?></textarea>

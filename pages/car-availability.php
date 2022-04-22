@@ -28,6 +28,13 @@ include '../include/heading.php';
           <div class="breadcrumb-item"><?= $page ?></div>
         </div>
         </div>
+        <div class="alert alert-info alert-has-icon">
+          <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+          <div class="alert-body">
+            <div class="alert-title">Info</div>
+            Data Ketersediaan Mobil ditampilkan berdasarkan tanggal hari ini.
+          </div>
+        </div>
         <div class="row">
           <div class="col col-md-5">
             <div class="card">
@@ -60,7 +67,7 @@ include '../include/heading.php';
 
                           foreach ($result as $rows) :
 
-                          if(date_format($d, 'Y-m-d') == $today_date && $rows_trip['date_today'] == NULL && $rows_trip['no_car'] == $rows['no_car']) :
+                          if(date_format($d, 'Y-m-d') == $today_date && $rows_trip['time_back'] == NULL && $rows_trip['no_car'] == $rows['no_car']) :
                       ?>
                       <tr>
                         <td scope="row"><?= $no++ ?></td>
@@ -115,7 +122,7 @@ include '../include/heading.php';
                         $items = [];
                         foreach ($result_trip as $rows_trip) :
                           $d = date_create($rows_trip['date_today']);
-                          if(date_format($d, 'Y-m-d') == $today_date && $rows_trip['date_today'] == NULL) :
+                          if(date_format($d, 'Y-m-d') == $today_date && $rows_trip['time_back'] == NULL) :
                             $items[] = $rows_trip['no_car'];
                           endif;
                         endforeach;

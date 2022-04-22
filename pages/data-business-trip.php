@@ -126,7 +126,7 @@ endif;
                     <td scope="row">
                     <?php
                     if($row['date_today'] == NULL) :
-                      if(in_array($session, ['Admin','Sekuriti'])) :
+                      if(in_array($session, ['Admin','Operator'])) :
                         echo "
                           <form method='POST' action=''>
                             <input type='hidden' class='form-control' name='date-today' id='date-today' value='".$row['id_business_trip']."'>
@@ -145,13 +145,13 @@ endif;
                     <td scope="row">
                       <?php
                       if($row['date_today'] == NULL) :
-                        if(in_array($session, ['Admin','Sekuriti'])) :
+                        if(in_array($session, ['Admin','Operator'])) :
                           echo "<b class='text-danger'>Lakukan set tanggal</b>";
                         else :
                           echo "-";
                         endif;
                       elseif($row['time_out'] == NULL) :
-                        if(in_array($session, ['Admin','Sekuriti'])) :
+                        if(in_array($session, ['Admin','Operator'])) :
                           echo "
                             <form method='POST' action=''>
                               <input type='hidden' class='form-control' name='time-out' id='time-out' value='".$row['id_business_trip']."'>
@@ -169,13 +169,13 @@ endif;
                     <td scope="row">
                       <?php
                       if($row['time_out'] == NULL) :
-                        if(in_array($session, ['Admin','Sekuriti'])) :
+                        if(in_array($session, ['Admin','Operator'])) :
                           echo "<b class='text-danger'>Tandai izin keluar</b>";
                         else :
                           echo "-";
                         endif;
                       elseif($row['time_back'] == NULL) :
-                        if(in_array($session, ['Admin','Sekuriti'])) :
+                        if(in_array($session, ['Admin','Operator'])) :
                           echo "
                             <form method='POST' action=''>
                               <input type='hidden' class='form-control' name='time-back' id='time-back' value='".$row['id_business_trip']."'>
@@ -219,7 +219,7 @@ endif;
                     <?php if(in_array($session, ['Admin','Operator'])) : ?>
                     <td scope="row">
                     <a href="./edit-business-trip.php?id-business-trip=<?= $row['id_business_trip'] ?>" class="btn btn-icon btn-primary" onclick="return confirm('Ingin mengubah data perjalanan?');"><i class="fas fa-edit"></i></a>
-                    <?php if(in_array($session, ['Admin','Sekuriti'])) : ?>
+                    <?php if(in_array($session, ['Admin'])) : ?>
                     <a href="./delete-business-trip.php?id-business-trip=<?= $row['id_business_trip'] ?>" class="btn btn-icon btn-danger" onclick="return confirm('Yakin ingin menghapus data perjalanan?');"><i class="fas fa-trash-alt"></i></a>
                     <?php endif; ?>
                     </td>
