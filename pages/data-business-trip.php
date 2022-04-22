@@ -65,6 +65,15 @@ endif;
           <div class="breadcrumb-item"><?= $page ?></div>
         </div>
         </div>
+        <?php if(in_array($session, ['Admin','Operator'])) : ?>
+        <div class="alert alert-warning alert-has-icon">
+          <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+          <div class="alert-body">
+            <div class="alert-title">Perhatian</div>
+            Jika tanggal, jam masuk, dan jam keluar yang akan diset bukan untuk tanggal hari ini, harap diset secara manual melalui TOMBOL EDIT.
+          </div>
+        </div>
+        <?php endif; ?>
         <div class="card">
           <?php if(in_array($session, ['Admin','Operator'])) : ?>
           <div class="card-header">
